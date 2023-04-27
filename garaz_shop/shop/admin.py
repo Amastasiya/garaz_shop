@@ -23,9 +23,6 @@ class Filter_productAdmin(admin.ModelAdmin):
 class Carsina_pocupokAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Carsina_pocupok._meta.get_fields()]
 
-#@admin.register(Product)
-#class ProductAdmin(admin.ModelAdmin):
-    #list_display = [field.name for field in Product._meta.get_fields()]
 
 @admin.register(Pocupatel)
 class PocupatelAdmin(admin.ModelAdmin):
