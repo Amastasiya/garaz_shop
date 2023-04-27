@@ -14,9 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.urls import include
 from django.urls import path
+from django.views.generic.base import RedirectView
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.debug import default_urlconf # восстановили ракету
 
 urlpatterns = [
+    path('', default_urlconf),  # восстановили ракету
     path('admin/', admin.site.urls),
-    #path('mainpage/', )
+    path('mainpage/', include('mainpage.urls')),
+    path('account/', include('account.urls')),
+    path('shop/', include('shop.urls'))
 ]
