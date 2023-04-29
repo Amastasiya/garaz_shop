@@ -1,0 +1,45 @@
+{% load static %}
+<form action="{% url 'glavnaya_str' %}" method="post">
+    {% csrf_token %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Гараж - главная страница</title>
+    <link href="{% static 'mainpage/css/index.css' %}" rel="stylesheet" type="text/css" />
+
+    <body>
+        <header>
+
+            <div id="top-header">
+                <ul class="header-links pull-left">
+                    <li><a href=""><i class="fa fa-phone">+7 111 999 99 99</i></a></li>
+                    <li><a href=""><i class="fa fa-envelope-o">Garaz@garaz_shop.ru</i></a></li>
+                    <li><a href=""><i class="fa fa-map-market">город Москва</i></a></li>
+                </ul>
+                <ul class="header-links pull-right">
+                    <li><a href=""><i class="fa fa-user-o">Личный кабинет</i></a></li>
+                </ul>
+            </div>
+
+            <div id="header">
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Логотип компании -->
+                        <div class="col-md-3">
+                            <div class="header-logo">
+                                <a href="http://127.0.0.1:8000/mainpage/" class="logo"><h1>ГАРАЖ</h1></a> <!-- сюда можно поставить картинку <img src="путь до картинки" alt="" вместо h1-->
+                            </div>
+                        </div>
+
+                        <!-- Карзина -->
+                        <div class="dropdown">
+                            <a hreg=""><span>Карзина</span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+    </body>
+
+</form>
