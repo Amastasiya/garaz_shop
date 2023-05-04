@@ -22,14 +22,6 @@ ul, ol {
   list-style: none
 }
 
-.pull-left {
-  float: left
-}
-
-.pull-right {
-  float: right;
-}
-
 #top-header {
   padding-top: 10px;
   padding-bottom: 30px;
@@ -56,12 +48,223 @@ ul, ol {
 
 .header-links li i {
   color: #D10024;
-  margin-right: 5px;
+  margin-right: 20px;
 }
 
 #header {
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 100px;
   background-color: #15161D;
 }
 
+.pull-left {
+  float: left
+}
+
+.pull-right {
+  float: right;
+  margin-top: 8px;
+}
+
+.header-logo {
+  font-size: 50px;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  float: left;
+  margin-top: -45px;
+}
+
+.logo {
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
+.cart {
+  float: right;
+  padding: 15px 0px;
+  margin-right: 20px;
+}
+
+.header-ctn > div {
+  display: inline-block;
+}
+
+.header-ctn > div > a {
+  display: block;
+  position: relative;
+  width: 90px;
+  text-align: center;
+  color: #FFF;
+}
+
+.red {
+  padding-top: 2px;
+  padding-bottom: 1px;
+  background-color: #D10024;
+}
+
+#navigation {
+  background: #FFF;
+  border-bottom: 2px solid #E4E7ED;
+  border-top: 3px solid #D10024;
+}
+
+.main-nav > li {
+  margin-left: 30px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.main-nav>li>a {
+  padding: 20px 0px;
+  text-decoration: none;
+}
+
+.main-nav>li>a:hover, .main-nav>li>a:focus, .main-nav>li.active>a {
+  color: #D10024;
+  background-color: transparent;
+}
+
+.section {
+  background: #FBFBFC;
+  border-bottom: 2px solid #E4E7ED;
+}
+
+.breadcrumb-tree>li {
+  margin-left: 30px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.breadcrumb-tree>li>a {
+  color: #808080;
+  text-decoration: none;
+}
+
+.breadcrumb-tree>li>a:hover, .breadcrumb-tree>li>a:focus {
+  color: #D10024;
+  background-color: transparent;
+}
+
+.section2 {
+  background: #FFF;
+  border-bottom: 2px solid #E4E7ED;
+}
+.row2 {
+  margin: 20px;
+}
+
+.row2>h3 {
+  text-align: center;
+  font-style: italic;
+}
+.row2>p {
+  text-align: justify;
+  text-indent: 40px;
+}
+
+#newsletter.section3 {
+  margin-top: 30px;
+}
+
+.newsletter {
+  text-align: center;
+}
+
+.newsletter p {
+  font-size: 24px;
+}
+
+.newsletter form {
+  position: relative;
+  max-width: 520px;
+  margin: 30px auto;
+}
+
+.input {
+  width: 300px;
+  height: 40px;
+  margin-right: -4px;
+  border-radius: 40px 0px 0px 40px;
+}
+
+.newsletter-btn {
+  width: 160px;
+  height: 40px;
+  font-weight: 700;
+  background: #D10024;
+  color: #FFF;
+  border: none;
+  border-radius: 0px 40px 40px 0px;
+}
+
+.newsletter-follow li {
+  display: inline-block;
+  margin: 30px;
+}
+
+#footer.section4 {
+  border-top: 3px solid #D10024;
+}
+
+#footer {
+  background: #15161D;
+  color: #B9BABC;
+}
+
+#bottom-footer {
+  background: #1E1F29;
+}
+.footer {
+  display: inline-block;
+  float: left;
+  margin-left: 100px;
+  margin-right: 100px;
+
+  /*width: 200px;
+  height: 400px;*/
+}
+.footer-title {
+  /*text-transform: uppercase;*/
+  font-size: 18px;
+  color: #B9BABC;
+  margin-left: 30px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+.footer-links>li {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footer-links>li>a {
+  color: #B9BABC;
+}
+
+.footer-links li a:hover {
+  color: #D10024;
+}
+
+.footer-payments li {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.footer-payments li:first-child {
+  margin-left: 400px;
+}
+
+
+.footer-payments li a {
+  color: #FFF;
+  font-size: 36px;
+  display: block;
+}
