@@ -19,6 +19,8 @@ from django.urls import path
 from django.views.generic.base import RedirectView
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.debug import default_urlconf # восстановили ракету
+from django.conf.urls.static import static
+from garaz_shop import settings
 
 urlpatterns = [
     path('', default_urlconf),  # восстановили ракету
@@ -27,3 +29,5 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('shop/', include('shop.urls'))
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
