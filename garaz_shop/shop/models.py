@@ -118,22 +118,48 @@ class ProductCart(models.Model):
 # Корзина
 class Cart(models.Model):
     guest = models.ForeignKey(Customer, verbose_name='Пользователь', on_delete=models.CASCADE)
-    product = models.ManyToManyField(ProductCart, blank=True, related_name='related_cart', verbose_name='Продукты')# blank=True определяет, будет ли поле обязательным в формах. Сюда входят администраторские и ваши собственные пользовательские формы.
+    products = models.ManyToManyField(ProductCart, blank=True, related_name='related_cart', verbose_name='Продукты')# blank=True определяет, будет ли поле обязательным в формах. Сюда входят администраторские и ваши собственные пользовательские формы.
+    product_quantity = models.IntegerField(default=8, verbose_name='Итоговое количество товара')
+    final_price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")  # max_digits=10 - максимальная длина числа до запятой, decimal_places=2 - количесво чисел после запятой
+    # является ли данная карзина какого либо товара
+    order_in = models.BooleanField(default=False)
+    # данное значения для пользователя который был не зарегистрирован
+    user_anonym = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.products
+
+    # Функция для подсчета суммы
+    def product_sum(self):
+        return [product.content_object for product in self.products.all()]
+
+    # total_price = sum(book.price for book in Book.objects.all())
+
+    class Meta:
+        verbose_name = 'Корзина'
+        verbose_name_plural = 'Корзины'
 
 # Заказы
 class Order(models.Model):
 
+    # статус заказа
     STATUS_NEW = 'new'
+    # добавить заказ отменен
+    STATUS_CANCELLED = 'cancelled'
+    # в процессе
     STATUS_IN_PROGRESS = 'in_progress'
+    # готов к выдаче
     STATUS_READY = 'is_ready'
+    # выдан
     STATUS_COMPLETED = 'completed'
 
+    # способ доставки
     BUYING_TYPE_SELF = 'self'
     BUYING_TYPE_DELIVERY = 'delivery'
 
     STATUS_CHOICES = (
         (STATUS_NEW, 'Новый заказ'),
+        (STATUS_CANCELLED, 'Заказ отменен'),
         (STATUS_IN_PROGRESS, 'Заказ в обработке'),
         (STATUS_READY, 'Заказ готов'),
         (STATUS_COMPLETED, 'Заказ получен покупателем')
