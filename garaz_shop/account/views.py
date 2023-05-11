@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm, UserRegistrationForm
+from django.contrib.auth.decorators import login_required
 # from .models import Profile
 
 def register(request):
@@ -37,6 +38,12 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'account/login.html', {'form': form})
+
+@login_required
+def garaz(request):
+    return render(request,
+                  'account/garaz.html',
+                  {'section': 'garaz'})
 
 
 
