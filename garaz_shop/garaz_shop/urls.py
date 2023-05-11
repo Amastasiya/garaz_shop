@@ -16,8 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include
 from django.urls import path
-from django.views.generic.base import RedirectView
-from django.contrib.staticfiles.storage import staticfiles_storage
+# from django.views.generic.base import RedirectView
+# from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.debug import default_urlconf # восстановили ракету
 from django.conf.urls.static import static
 from garaz_shop import settings

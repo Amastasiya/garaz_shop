@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ProductDetailView
+#from .views import ProductDetailView
 
 from . import views
 

@@ -38,7 +38,7 @@ class LoginForm(forms.ModelForm):
         password = self.cleaned_data['password']
         user = User.objects.filter(email=email).first()
         if not user:
-            raise forms.ValidationError('Пользователь с данным Email {} не найден в системе'.format(self.email))
+            raise forms.ValidationError('Пользователь с данным Email не найден в системе')
         if not user.check_password(password):
             raise forms.ValidationError('Неверный пароль')
         return self.cleaned_data
@@ -66,7 +66,7 @@ class RegistrationForm(forms.ModelForm):
         email = self.cleaned_data['email']
         domain = email.split('.')[-1]
         if domain in ['net', 'xyz']:
-            raise forms.ValidationError(f'Регистрация для домена {domain} невозможна')
+            raise forms.ValidationError('Регистрация для данного домена невозможна') # 'Регистрация для домена {} невозможна'.format(self.domain)
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError('Данный почтовый адрес уже зарегистрирован')
         return email
