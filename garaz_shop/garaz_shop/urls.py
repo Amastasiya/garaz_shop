@@ -26,7 +26,6 @@ urlpatterns = [
     path('', default_urlconf),  # восстановили ракету
     path('admin/', admin.site.urls),
     path('mainpage/', include('mainpage.urls')),
-    path('account/', include('account.urls')),
     path('shop/', include('shop.urls'))
 ]
 
